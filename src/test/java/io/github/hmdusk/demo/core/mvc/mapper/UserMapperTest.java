@@ -8,6 +8,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author liming
@@ -20,7 +23,7 @@ public class UserMapperTest {
 	private UserMapper userMapper;
 
 	@Before
-	public void setUp(){
+	public void setUp() {
 	}
 
 	@Test
@@ -31,6 +34,40 @@ public class UserMapperTest {
 
 	@Test
 	public void insert() {
-		userMapper.insert("zhang",30);
+		int result = userMapper.insert("zhang", 30);
+		System.out.println(result);
+	}
+
+	@Test
+	public void insertByMap() {
+		Map<String, Object> map = new HashMap<>(2);
+		map.put("name", "wang");
+		map.put("age", 86);
+		int result = userMapper.insertByMap(map);
+		System.out.println(result);
+	}
+
+	@Test
+	public void insertByUser() {
+		User user = new User("user", 10000);
+		int result = userMapper.insertByUser(user);
+		System.out.println(result);
+	}
+
+	@Test
+	public void update() {
+		User user = new User("user", 2018);
+		userMapper.update(user);
+	}
+
+	@Test
+	public void delete() {
+		userMapper.delete(5L);
+	}
+
+	@Test
+	public void findAll() {
+		List<User> users = userMapper.findAll();
+		System.out.println(users);
 	}
 }
