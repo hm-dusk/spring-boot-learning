@@ -1,0 +1,20 @@
+# 端口设置
+server:
+  port: 9001
+# MySQL数据库配置
+spring:
+  application:
+    name: spring boot test
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username:
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+# 阈值
+io:
+  github:
+    hm-dusk:
+      name: liming
+      email: cqupt@163.com
+      description: the email of  ${io.github.hm-dusk.name} is ${io.github.hm-dusk.email}
+      random: ${random.uuid}
