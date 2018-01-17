@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.github.hm-dusk</groupId>
-    <artifactId>demo</artifactId>
+    <artifactId>spring-boot-learning</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>demo</name>
+    <name>spring-boot-learning</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -53,29 +53,35 @@
         <!-- security权限验证 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-security</artifactId>
-    </dependency>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
 
-    <!-- 数据库连接JDBC配置 -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-jdbc</artifactId>
-    </dependency>
-    <!-- 嵌入式数据库支持 -->
-    <dependency>
-        <groupId>org.hsqldb</groupId>
-        <artifactId>hsqldb</artifactId>
-        <scope>runtime</scope>
-    </dependency>
-    <!-- MySQL数据库依赖 -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>5.1.44</version>
-    </dependency>
-</dependencies>
+        <!-- Mybatis配置 -->
+        <dependency>
+            <groupId>org.mybatis.spring.boot</groupId>
+            <artifactId>mybatis-spring-boot-starter</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+        <!-- 数据库连接JDBC配置（用了mybatis-spring-boot-starter就不需要单独配这个） -->
+        <!--<dependency>-->
+        <!--<groupId>org.springframework.boot</groupId>-->
+        <!--<artifactId>spring-boot-starter-jdbc</artifactId>-->
+        <!--</dependency>-->
+        <!-- 嵌入式数据库支持 -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <!-- MySQL数据库连接依赖 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.44</version>
+        </dependency>
+    </dependencies>
 
-<build>
+    <build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
