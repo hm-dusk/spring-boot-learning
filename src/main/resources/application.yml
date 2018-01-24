@@ -3,6 +3,10 @@ server:
   port: 9001
 
 spring:
+# 日志多彩输出
+  output:
+   ansi:
+    enabled: ALWAYS
   application:
     name: spring boot test
 # MySQL数据库配置
@@ -11,6 +15,10 @@ spring:
     username: liming
     password: 1234
     driver-class-name: com.mysql.jdbc.Driver
+
+# 调试模式
+debug: false
+
 # 阈值
 io:
   github:
@@ -19,3 +27,10 @@ io:
       email: cqupt@163.com
       description: the email of  ${io.github.hm-dusk.name} is ${io.github.hm-dusk.email}
       random: ${random.uuid}
+
+# 日志（日志文件会在10Mb大小的时候被截断，产生新的日志文件，默认级别为：ERROR、WARN、INFO）
+logging:
+  # 输出路径，也可用file指定相对路径
+  path: D:\\log
+  # 日志输出级别（TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF）
+  level: info
